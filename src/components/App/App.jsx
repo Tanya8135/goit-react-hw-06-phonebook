@@ -9,7 +9,6 @@ import style from './App.module.css';
 
 const App = () => {
   const [contacts, setContacts] = useState([]);
-  const [filter, setFilter] = useState('');
 
   useEffect(() => {
     const storedContacts = localStorage.getItem('contacts');
@@ -46,14 +45,14 @@ const App = () => {
     );
   };
 
-  const handleFilterChange = e => {
-    const filterValue = e.target.value;
-    setFilter(filterValue);
-  };
+  // const handleFilterChange = e => {
+  //   const filterValue = e.target.value;
+  //   setFilter(filterValue);
+  // };
 
-  const filterContacts = contacts.filter(contact =>
-    contact.name.toLowerCase().includes(filter.toLowerCase())
-  );
+  // const filterContacts = contacts.filter(contact =>
+  //   contact.name.toLowerCase().includes(filter.toLowerCase())
+  // );
 
   return (
     <div className={style['phone-book']}>
@@ -61,12 +60,9 @@ const App = () => {
       <ContactForm onAddContact={handleAddContact} />
 
       <h2 className={style.name}>Contacts</h2>
-      <Filter filter={filter} onChange={handleFilterChange} />
+      <Filter contacts={contacts} />
 
-      <ContactList
-        contacts={filterContacts}
-        onDeleteContact={handleDeleteContact}
-      />
+      <ContactList contacts={contacts} onDeleteContact={handleDeleteContact} />
     </div>
   );
 };
