@@ -47,9 +47,10 @@
 
 // const contactsSlice = createSlice({
 //     name: 'contacts',
-//     initialState: {
-//         contacts: [],
-//     },
+//     // initialState: {
+//     //     contacts: [],
+//     // },
+//     initialState: [],
 //     reducers: {
 //         addContact: (state, action) => {
 //             return { ...state, contacts: [...state.contacts, action.payload] };
@@ -78,7 +79,7 @@ import { initialContacts } from "data/initContacts";
 import storage from 'redux-persist/lib/storage';
 
 const initialState = {
-    list: initialContacts,
+    contacts: initialContacts,
 }
 
 const contactsSlice = createSlice({

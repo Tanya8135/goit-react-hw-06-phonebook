@@ -98,7 +98,7 @@ const Filter = () => {
         value={filter}
         onChange={handleFilterChange}
       />
-      <button>Apply Filter</button>
+      {/* <button>Apply Filter</button> */}
     </label>
   );
 };
