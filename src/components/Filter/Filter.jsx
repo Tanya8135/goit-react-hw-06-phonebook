@@ -37,10 +37,46 @@
 
 // export default Filter;
 
-import PropTypes from 'prop-types';
+// // import PropTypes from 'prop-types';
+// import { useSelector, useDispatch } from 'react-redux';
+// import { getStatusFilter } from 'redux/selectors';
+// import { setStatusFilter } from 'redux/filterSlice';
+
+// import style from './Filter.module.css';
+
+// const Filter = () => {
+//   const dispatch = useDispatch();
+//   const filter = useSelector(getStatusFilter);
+
+//   const handleFilter = () => {
+//     dispatch(setStatusFilter(filter));
+//   };
+
+//   return (
+//     <label className={style.subTitle}>
+//       Find contacts by name
+//       <input
+//         className={style.input}
+//         type="text"
+//         name="filter"
+//         value={filter}
+//         onChange={e => dispatch(setStatusFilter(e.target.value))}
+//       />
+//       <button onClick={handleFilter}>Apply Filter</button>
+//     </label>
+//   );
+// };
+
+// // Filter.propTypes = {
+// //   contacts: PropTypes.array.isRequired,
+// // };
+
+// export default Filter;
+
+import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { getStatusFilter } from 'components/redux/selectors';
-import { setStatusFilter } from 'components/redux/filterSlice';
+import { getStatusFilter } from 'redux/selectors';
+import { setStatusFilter } from 'redux/filterSlice';
 
 import style from './Filter.module.css';
 
@@ -48,8 +84,8 @@ const Filter = () => {
   const dispatch = useDispatch();
   const filter = useSelector(getStatusFilter);
 
-  const handleFilter = () => {
-    dispatch(setStatusFilter(filter));
+  const handleFilterChange = e => {
+    dispatch(setStatusFilter(e.target.value));
   };
 
   return (
@@ -60,15 +96,11 @@ const Filter = () => {
         type="text"
         name="filter"
         value={filter}
-        onChange={e => dispatch(setStatusFilter(e.target.value))}
+        onChange={handleFilterChange}
       />
-      <button onClick={handleFilter}>Apply Filter</button>
+      <button>Apply Filter</button>
     </label>
   );
-};
-
-Filter.propTypes = {
-  contacts: PropTypes.array.isRequired,
 };
 
 export default Filter;

@@ -1,5 +1,5 @@
 import { useDispatch } from 'react-redux';
-import { addContact } from 'components/redux/contactsSlice';
+import { addContact } from 'redux/contactsSlice';
 
 import style from './ContactForm.module.css';
 
