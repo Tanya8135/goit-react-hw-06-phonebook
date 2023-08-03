@@ -88,15 +88,19 @@ const contactsSlice = createSlice({
     initialState,
     reducers: {
         addContact: (state, action) => {
-            //     return { ...state, contacts: [...state.contacts, action.payload] };
-            // },
-            // deleteContact: (state, action) => {
-            //     state.contacts = state.contacts.filter(
-            //         (contact) => contact.id !== action.payload
-            //     );
             return { ...state, list: [...state.list, action.payload] };
         },
         deleteContact: (state, action) => ({ ...state, list: state.list.filter(contact => contact.id !== action.payload) })
+
+        //     return { ...state, contacts: [...state.contacts, action.payload] };
+        // },
+        // deleteContact: (state, action) => {
+        //     state.contacts = state.contacts.filter(
+        //         (contact) => contact.id !== action.payload
+        //     );
+        //     return { ...state, list: [...state.list, action.payload] };
+        // },
+        // deleteContact: (state, action) => ({ ...state, list: state.list.filter(contact => contact.id !== action.payload) })
     }
 });
 
