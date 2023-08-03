@@ -1,10 +1,12 @@
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { addContact } from 'redux/contactsSlice';
 
 import style from './ContactForm.module.css';
+import { getFilteredContacts } from 'redux/selectors';
 
 const ContactForm = () => {
   const dispatch = useDispatch();
+  const filteredContacts = useSelector(getFilteredContacts);
 
   const handleSubmit = e => {
     e.preventDefault();
@@ -12,7 +14,15 @@ const ContactForm = () => {
     const name = form.elements.name.value;
     const number = form.elements.number.value;
 
-    dispatch(addContact({ name, number }));
+    const dublicateContact = filteredContacts.some(
+      contact => contact.name.toLowerCase() === name.toLowerCase()
+    );
+
+    if (dublicateContact) {
+      alert(`${name} is already in contacts!`);
+    } else {
+      dispatch(addContact({ name, number }));
+    }
 
     form.reset();
   };
