@@ -1,7 +1,12 @@
 .phone-book {
+  margin: 0 auto;
+  width: 500px;
   padding: 15px;
 }
 
 .name {
+  display: flex;
+  justify-content: center;
   color: #504848;
 }
+

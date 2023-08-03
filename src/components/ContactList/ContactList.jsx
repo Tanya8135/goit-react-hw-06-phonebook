@@ -11,10 +11,11 @@ const ContactList = () => {
   const handleDelete = id => dispatch(deleteContact(id));
 
   return (
-    <ul>
+    <ul className={style.test}>
       {filterContacts.map(contact => (
         <li className={style.list} key={contact.id}>
           {contact.name} ({contact.number})
+          <div className={style.btnTest}>
           <button
             className={style.btnDelete}
             type="button"
@@ -22,6 +23,7 @@ const ContactList = () => {
           >
             Delete
           </button>
+          </div>
         </li>
       ))}
     </ul>

@@ -1,3 +1,8 @@
+.test {
+  width: 180px;
+  margin: 0 auto;
+}
+
 .subTitle {
   font-size: 18px;
   line-height: 30px;
@@ -6,7 +11,7 @@
 .input {
   display: block;
   font-size: 14px;
-  /* line-height: 30px; */
+  min-width: 200px;
   padding: 5px 0 5px 8px;
   margin-bottom: 31px;
   border-radius: 10px;
@@ -17,6 +22,7 @@
 
 .btn {
   display: block;
+  margin: 0 auto;
   padding: 8px 10px;
   border-radius: 10px;
   border: 1px solid #c0c0c0;

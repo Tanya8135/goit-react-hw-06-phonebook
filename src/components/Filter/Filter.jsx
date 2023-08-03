@@ -89,17 +89,19 @@ const Filter = () => {
   };
 
   return (
-    <label className={style.subTitle}>
-      Find contacts by name
-      <input
-        className={style.input}
-        type="text"
-        name="filter"
-        value={filter}
-        onChange={handleFilterChange}
-      />
-      {/* <button>Apply Filter</button> */}
-    </label>
+    <div className={style.test}>
+      <label className={style.subTitle}>
+        Find contacts by name
+        <input
+          className={style.input}
+          type="text"
+          name="filter"
+          value={filter}
+          onChange={handleFilterChange}
+        />
+        {/* <button>Apply Filter</button> */}
+      </label>
+    </div>
   );
 };
 

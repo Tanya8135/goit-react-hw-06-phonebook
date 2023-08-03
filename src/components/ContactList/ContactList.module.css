@@ -1,5 +1,14 @@
+.test {
+  margin: 0 auto;
+  margin-right: 40px;
+  max-width: 300px;
+}
+
 .list {
-  margin-bottom: 10px;
+  position: relative;
+  display: flex;
+  margin-bottom: 20px;
+  width: 300px;
 
   &:last-child {
     margin-bottom: 0;
@@ -7,8 +16,13 @@
 }
 
 .btnDelete {
+  position: absolute;
+  top: -1px;
+  right: 0px;
   padding: 4px 8px;
-  margin-left: 24px;
+  margin: 0;
+  /* margin-left: 24px; */
   border-radius: 10px;
   border: 1px solid #c0c0c0;
 }
+
